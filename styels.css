@@ -1,0 +1,559 @@
+/* body */
+body{
+    /* font-family: 'Playfair Display', serif; */
+    font-family: "Rajdhani", sans-serif;    
+    font-style: normal;
+    padding: 98px 10px 5px 10px;
+    background-color: #e5d7d7;
+}
+
+/* Navbar Base Styling */
+.navbar {
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0px 4px 10px rgba(51, 51, 51, 0.3);
+    padding: 1rem 0;
+    transition: all 0.3s ease; /* Smooth transition for scroll */
+}
+
+.navbar.scrolled {
+    background: #ffffff;
+    padding: 0.8rem 0; /* Slight shrink on scroll */
+}
+
+/* Brand Animation */
+.navbar-brand {
+    
+    font-size: 1.8rem;
+    color: #2c3e50;
+    font-weight: 300;
+    letter-spacing: 1px;
+    display: inline-block;
+    position: relative;
+}
+
+.animate-brand {
+    animation: fadeInDown 1s ease-out; /* Load animation */
+}
+
+.navbar-brand:hover {
+    color: #e67e22;
+}
+
+/* Nav Links Animation */
+.navbar-nav .nav-link {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.1rem;
+    color: #2c3e50;
+    padding: 0.5rem 1.5rem;
+    position: relative;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.animate-link {
+    opacity: 0; /* Initial state for animation */
+    animation: slideIn 0.5s ease forwards; /* Slide in on load */
+}
+
+.navbar-nav .nav-link:nth-child(1) { animation-delay: 0.1s; }
+.navbar-nav .nav-link:nth-child(2) { animation-delay: 0.2s; }
+.navbar-nav .nav-link:nth-child(3) { animation-delay: 0.3s; }
+.navbar-nav .nav-link:nth-child(4) { animation-delay: 0.4s; }
+
+.navbar-nav .nav-link:hover {
+    color: #e67e22;
+    transform: translateY(-3px); /* Slight lift on hover */
+}
+
+.navbar-nav .nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    background: #e67e22;
+    transition: all 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover::after {
+    width: 50%;
+    left: 25%;
+}
+
+/* Toggler */
+.navbar-toggler {
+    border: none;
+    transition: transform 0.3s ease;
+}
+
+.navbar-toggler:hover {
+    transform: rotate(90deg); /* Rotate on hover */
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(44, 62, 80, 0.8)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* Mobile Menu Animation */
+.navbar-collapse {
+    transition: max-height 0.5s ease; /* Smooth collapse animation */
+}
+
+/* Hero-section */
+.hero {
+    height: 100vh;
+    background: url('/Contents/Images/hero-section.jpg') no-repeat center/cover;
+    box-shadow: 5px 10px 15px  rgba(51, 51, 51, 1);
+    animation: slideIn 2s ease forwards;
+}
+.spaced-text {
+    letter-spacing: 3px; /* Spacing for h1 */
+    animation: fadeInDown 1s ease-out;
+}
+
+.subheading {
+    font-size: 1.35rem; /* Size for h5 */
+    font-weight: 400; /* Lighter weight */
+    letter-spacing: 4px; /* Spacing for text */
+    margin-top: 0.5rem; /* Gap between h1 and h5 */    
+    animation: fadeInDown 1s ease-out;
+    
+}
+
+/* Full Line Styling */
+.subheading .line {
+    display: inline-block;
+    width: 100%;
+    max-width: 275px;
+    margin: 5px;
+    height: 1px;
+    background: #040404;
+    margin-left: 1rem;
+    transform: scaleX(0.5);
+    transform-origin: left;
+    
+}
+
+.about{
+    height: 100vh;
+    padding-top: 95px;       
+    
+}
+.about h2{
+    text-align: center;
+    font-size: 3.2em;
+    animation: fadeInDown 1s ease-out;
+    padding-left: 65px;
+}
+.about h2 .line {
+    display: inline-block;
+    width: 100%;
+    max-width: 275px;
+    margin: 10px;
+    height: 2px;
+    background: #af5959;
+    margin-left: 1rem;
+    transform: scaleX(0.5);    
+    transform-origin: left; /* Start animation from right */
+    animation: growFromRight 1.2s ease-out forwards; /* Right-to-center animation */
+    
+}
+.about-image {
+    border-radius: 10px;
+    box-shadow: 5px 10px 15px  rgba(51, 51, 51, 1);
+    opacity: 0; /* Start hidden */
+    animation: slideInLeft 1s ease-out forwards; /* Slide in from left */
+}
+/* Text Styling */
+.about-text {
+    opacity: 0; /* Start hidden */
+    animation: slideInRight 1s ease-out 0.5s forwards; /* Slide in from right with delay */
+}
+
+.about-text h3 {
+    color: #2b2d2e;
+    font-size: 2rem;
+}
+
+.about-text .lead {
+    color: #e98329;
+    font-size: 1.25rem;
+}
+.about-text p {
+    color: #2e2e2e;
+    line-height: 2;
+}
+
+.btn-primary {
+    background: #e67e22;
+    border: none;
+    transition: transform 0.3s ease;
+}
+
+.btn-primary:hover {
+    background: #d35400;
+    transform: translateY(-3px);
+}
+/* Animation Classes (Added on Scroll) */
+.animate-heading {
+    animation: fadeInDown 1s ease-out forwards;
+}
+
+.animate-line {
+    animation: growFromRight 1s ease-out forwards;
+}
+
+.animate-image {
+    animation: slideInLeft 1s ease-out forwards;
+}
+
+.animate-text {
+    animation: slideInRight 1s ease-out forwards;
+}
+
+/* Work Section */
+.work {
+    background: #edf0f3;
+    padding: 2rem 0;
+    border-radius: 5px;
+}
+
+/* Work Heading */
+.work-heading {
+    text-align: center;
+    font-size: 3.2em;
+    animation: fadeInDown 1s ease-out;
+    padding-left: 65px;
+}
+
+/* Line Styling */
+.work-heading .line {
+    display: inline-block;
+    width: 100%;
+    max-width: 275px;
+    margin: 10px;
+    height: 2px;
+    background: #af5959;
+    margin-left: 1rem;
+    transform: scaleX(0.5);    
+    transform-origin: left; /* Start animation from right */
+    animation: growFromRight 1.2s ease-out forwards; /* Right-to-center animation */
+}
+
+/* Carousel Styling */
+.carousel {
+    position: relative; /* Ensure buttons position correctly */
+}
+
+.carousel-inner {
+    opacity: 1;
+}
+
+.carousel-item .row {
+    justify-content: center;
+}
+
+/* Card Styling */
+.work-card {
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    opacity: 1;
+    transition: transform 0.3s ease;
+}
+
+.work-card:hover {
+    transform: translateY(-10px);
+}
+
+.work-card img {
+    height: 200px;
+    object-fit: cover;
+}
+
+.work-card .card-body {
+    position: absolute;
+    bottom: -100%; /* Hidden below card */
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(212 217 197 / 90%); /* Semi-transparent white */
+    padding: 2.5rem;
+    opacity: 0;
+    transition: all 0.8s ease; /* Smooth transition */
+}
+/* Show Card Body on Hover */
+.work-card:hover .card-body {
+    bottom: 0; /* Slide up to visible */
+    opacity: 1;
+}
+
+.title {
+    padding-top: 10px;
+    font-size: 1.5rem;
+    color: #2c3e50;
+    text-align: center;
+}
+
+.work-card .card-text {
+    color: #666;
+}
+
+.btn-outline-primary {
+    border-color: #e67e22;
+    color: #e67e22;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-primary:hover {
+    background: #e67e22;
+    color: #fff;
+}
+
+/* Carousel Control Buttons */
+.carousel-control-prev,
+.carousel-control-next {
+    width: 5%; /* Ensure buttons are visible */
+    opacity: 0.8; /* Slightly visible by default */
+    transition: opacity 0.3s ease;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+    opacity: 1; /* Fully visible on hover */
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: #e67e22; /* Custom color */
+    border-radius: 50%; /* Round buttons */
+    width: 40px;
+    height: 40px;
+}
+
+.Contact{
+    background: #f5ddb2;
+    padding: 2rem 0;
+    margin: 25px 0;
+    border-radius: 5px;
+}
+
+/* Work Heading */
+.Contact-heading {
+    text-align: center;
+    font-size: 3.2em;
+    animation: fadeInDown 1s ease-out;
+    padding-left: 65px;
+}
+
+/* Line Styling */
+.Contact-heading .line {
+    display: inline-block;
+    width: 100%;
+    max-width: 275px;
+    margin: 10px;
+    height: 2px;
+    background: #af5959;
+    margin-left: 1rem;
+    transform: scaleX(0.5);    
+    transform-origin: left; /* Start animation from right */
+    animation: growFromRight 1.2s ease-out forwards; /* Right-to-center animation */
+}
+
+/* Create two equal columns that floats next to each other */
+.column {
+    float: left;
+    width: 50%;
+    padding: 10px;
+    height: 300px; /* Should be removed. Only for demonstration */
+  }
+  .column h2{
+    padding-left: 5em;
+  }
+  .column p{
+    font-size: 1.4em;
+    padding-left: 9em;
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  .vl {
+    border-left: 1px solid rgb(0, 0, 0);
+    height: 300px
+  }
+  /* Social Media Styling */
+  .social-media {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding-left: 5em;
+}
+.social-item {
+    display: flex;
+    align-items: center;
+    position: relative;
+    
+}
+.social-item a {
+    display: inline-block;
+    width: 70px;
+    height: 70px;
+    background: #ffffff;
+    color: #fff;
+    text-align: center;
+    line-height: 70px;
+    border-radius: 50%;
+    font-size: 24px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+.social-item h2 {
+    position: absolute;
+    left: 70px; /* Space from icon */
+    opacity: 0;
+    color: #2f4f4f;
+    font-size: 25px;
+    font-family: "Rajdhani", sans-serif;   
+    font-style: italic;
+    transition: all 0.3s ease;
+    pointer-events: none; /* Text pe click na ho */
+}
+.social-item a:hover {
+    background: #8b4513; /* Darker shade on hover */
+    transform: scale(1.1) rotate(10deg); /* Animation */
+}
+.social-item a:hover + h2 {
+    opacity: 1;
+    left: 80px; /* Text slides out */
+    background-color: #f3d1ae;
+}
+
+.footer{
+    background-color: #d0b6d5;
+   
+}
+.footer p{
+    padding-top: 10px;
+}
+
+
+/* Animation Classes */
+.animate-heading {
+    animation: fadeInDown 1s ease-out forwards;
+}
+
+.animate-line {
+    animation: growFromRight 1s ease-out forwards;
+}
+
+.animate-carousel {
+    animation: fadeInUp 1s ease-out forwards;
+}
+
+.animate-card {
+    animation: slideInUp 1s ease-out forwards;
+}
+
+/* Keyframes for Animations */
+@keyframes fadeInDown {
+    0% { opacity: 0; transform: translateY(-20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+    0% { opacity: 0; transform: translateX(20px); }
+    100% { opacity: 1; transform: translateX(0); }
+}
+@keyframes growFromRight {
+    0% { width: 0; } /* Start from right with no width */
+    100% { width: 150px; } /* Grow to full length toward center */
+}
+@keyframes slideInLeft {
+    0% { opacity: 0; transform: translateX(-50px); }
+    100% { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideInRight {
+    0% { opacity: 0; transform: translateX(50px); }
+    100% { opacity: 1; transform: translateX(0); }
+}
+/* Responsive Adjustments */
+@media (max-width: 991px) {
+    .navbar-collapse {
+        background: #eeecec;
+        padding: 1rem;
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+        max-height: 0;
+        overflow: hidden;
+    }
+
+    .navbar-collapse.show {
+        max-height: 300px; /* Adjust based on content */
+    }
+
+    .navbar-nav .nav-link {
+        padding: 0.8rem 1rem;
+    }
+
+    .navbar-nav .nav-link::after {
+        display: none;
+    }
+
+    .animate-link {
+        animation: none; /* Disable slide-in for mobile */
+        opacity: 1;
+    }
+}
+@media (max-width: 992px) { /* Tablets and below */
+    .about h2 {
+        font-size: 2rem; /* Slightly smaller */
+        letter-spacing: 1.5px;
+    }
+    .about h2 .line {
+        max-width: 120px; /* Shorter line */
+    }
+    .about-text h3 {
+        font-size: 1.8rem;
+    }
+}
+@media (max-width: 768px) { /* Mobile devices */
+    .about {
+        padding: 3rem 0; /* Less padding */
+    }
+    .about h2 {
+        font-size: 1.8rem; /* Smaller text */     
+        text-align: center;
+        padding-left: 65px;
+    }
+    .about h2 .line {
+        max-width: 100px; /* Even shorter line */
+        margin-left: 10px; /* Remove left margin */
+        margin-top: 0.5rem; /* Gap below text */
+    }
+    .about-image {
+        margin-bottom: 2rem; /* Space between image and text */
+    }
+    .about-text {
+        text-align: center; /* Center text on mobile */
+    }
+}
+
+@media (max-width: 576px) { /* Small mobile devices */
+    .about h2 {
+        font-size: 1.5rem; /* Smallest size */
+    }
+    .about h2 .line {
+        max-width: 80px; /* Shortest line */
+    }
+    .about-text h3 {
+        font-size: 1.5rem;
+    }
+    .about-text .lead {
+        font-size: 1rem;
+    }
+}
