@@ -1,0 +1,24 @@
+// Intersection Observer for Scroll Animation
+document.addEventListener('DOMContentLoaded', () => {
+    const aboutSection = document.querySelector('#AboutMe');
+    const heading = document.querySelector('.about h2');
+    const line = document.querySelector('.about h2 .line');
+    const image = document.querySelector('.about-image');
+    const text = document.querySelector('.about-text');
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                heading.classList.add('animate-heading');
+                line.classList.add('animate-line');
+                image.classList.add('animate-image');
+                text.classList.add('animate-text');
+                observer.unobserve(entry.target); // Stop observing after animation triggers
+            }
+        });
+    }, {
+        threshold: 0.3 // Trigger when 30% of section is visible
+    });
+
+    observer.observe(aboutSection);
+});
